@@ -1,12 +1,16 @@
 /* Randomize the computer choice */
 function getComputerChoice() {
   let choiceNumber = Math.random() * 100;
+	let computerChoice = "";
   if (choiceNumber < 34) {
-    choice = "rock";
+		computerChoice = "rock";
+    return computerChoice; 
   } else if (choiceNumber < 67) {
-    choice = "paper";
+		computerChoice = "paper";
+    return computerChoice;
   } else {
-    choice = "scissors";
+		computerChoice = "scissors";
+    return computerChoice;
   }
 }
 
@@ -19,9 +23,11 @@ function getUserChoice() {
 
 /* Compare the two choices */
 function isATie(humanChoice, computerChoice) {
-  humanChoice === computerChoice
-    ? alert("It's a tie!")
-    : compareChoices(humanChoice, computerChoice);
+  if (humanChoice === computerChoice) {
+    alert("It's a tie!");
+  } else {
+    compareChoices(humanChoice, computerChoice);
+  }
 }
 
 function compareChoices(humanChoice, computerChoice) {
@@ -32,11 +38,10 @@ function compareChoices(humanChoice, computerChoice) {
   ) {
     console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
     humanScore++;
+  } else {
+    alert(`You lose. ${computerChoice} beats ${humanChoice}`);
+    computerScore++;
   }
-	else {
-		alert(`You lose. ${computerChoice} beats ${humanChoice}`);
-		computerScore++;
-	}
 }
 
 /* Keep score */
@@ -47,3 +52,4 @@ let computerScore = 0;
 
 getUserChoice();
 getComputerChoice();
+isATie();
