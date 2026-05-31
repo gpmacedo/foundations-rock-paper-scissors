@@ -24,7 +24,7 @@ function getUserChoice() {
 /* Compare the two choices */
 function isATie(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
-    alert("It's a tie!");
+    console.log("It's a tie!");
   } else {
     compareChoices(humanChoice, computerChoice);
   }
@@ -36,10 +36,11 @@ function compareChoices(humanChoice, computerChoice) {
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
-    console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+    console.log(`You Win! ${String(humanChoice).charAt(0).toUpperCase() + String(humanChoice).slice(1)} 
+		beats ${String(computerChoice).charAt(0).toUpperCase() + String(humanChoice).slice(1)}`);
     humanScore++;
   } else {
-    alert(`You lose. ${computerChoice} beats ${humanChoice}`);
+    console.log(`You lose. ${computerChoice} beats ${humanChoice}`);
     computerScore++;
   }
 }
