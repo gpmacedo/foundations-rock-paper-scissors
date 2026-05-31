@@ -1,15 +1,15 @@
 /* Randomize the computer choice */
 function getComputerChoice() {
   let choiceNumber = Math.random() * 100;
-	let computerChoice = "";
+  let computerChoice = "";
   if (choiceNumber < 34) {
-		computerChoice = "rock";
-    return computerChoice; 
+    computerChoice = "rock";
+    return computerChoice;
   } else if (choiceNumber < 67) {
-		computerChoice = "paper";
+    computerChoice = "paper";
     return computerChoice;
   } else {
-		computerChoice = "scissors";
+    computerChoice = "scissors";
     return computerChoice;
   }
 }
@@ -36,11 +36,14 @@ function compareChoices(humanChoice, computerChoice) {
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")
   ) {
-    console.log(`You Win! ${String(humanChoice).charAt(0).toUpperCase() + String(humanChoice).slice(1)} 
-		beats ${String(computerChoice).charAt(0).toUpperCase() + String(humanChoice).slice(1)}`);
+    console.log(
+      `You Win! ${String(humanChoice).charAt(0).toUpperCase() + String(humanChoice).slice(1)} beats ${String(computerChoice).charAt(0).toUpperCase() + String(computerChoice).slice(1)}`,
+    );
     humanScore++;
   } else {
-    console.log(`You lose. ${computerChoice} beats ${humanChoice}`);
+    console.log(
+      `You lose. ${String(computerChoice).charAt(0).toUpperCase() + String(computerChoice).slice(1)} beats ${String(humanChoice).charAt(0).toUpperCase() + String(humanChoice).slice(1)}`,
+    );
     computerScore++;
   }
 }
