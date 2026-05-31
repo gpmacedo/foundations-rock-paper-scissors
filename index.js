@@ -1,4 +1,3 @@
-/* Prompt the user for their choice */
 /* Randomize the computer choice */
 function getComputerChoice() {
   let choiceNumber = Math.random() * 100;
@@ -9,10 +8,19 @@ function getComputerChoice() {
   } else {
     choice = "scissors";
   }
-  console.log(choiceNumber);
-	console.log(choice);
 }
 
-getComputerChoice();
+/* Prompt the user for their choice */
+
+function getUserChoice() {
+  let userChoice = prompt("Rock, paper, scissors? ", "Pick one");
+  return userChoice;
+}
+
 /* Compare the two choices */
 /* Keep score */
+/* Call functions */
+
+getUserChoice();
+getComputerChoice();
+
