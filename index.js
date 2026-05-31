@@ -51,18 +51,28 @@ function compareChoices(humanChoice, computerChoice) {
 
 /* Logic for 5 rounds */
 function playGame() {
+  let humanChoice = getUserChoice();
+  let computerChoice = getComputerChoice();
   isATie(humanChoice, computerChoice);
   console.log(`The score is: H ${humanScore} - C ${computerScore}`);
+  humanChoice = getUserChoice();
+  computerChoice = getComputerChoice();
   isATie(humanChoice, computerChoice);
   console.log(`The score is: H ${humanScore} - C ${computerScore}`);
+  humanChoice = getUserChoice();
+  computerChoice = getComputerChoice();
   isATie(humanChoice, computerChoice);
   console.log(`The score is: H ${humanScore} - C ${computerScore}`);
+  humanChoice = getUserChoice();
+  computerChoice = getComputerChoice();
   isATie(humanChoice, computerChoice);
   console.log(`The score is: H ${humanScore} - C ${computerScore}`);
+  humanChoice = getUserChoice();
+  computerChoice = getComputerChoice();
   isATie(humanChoice, computerChoice);
   console.log(`The final is: H ${humanScore} - C ${computerScore}`);
   if (humanScore > computerScore) {
-    console.log("Congratulations! You Win.");
+    console.log("Congratulations! You Win the game.");
   } else {
     console.log("Too bad. You Lose.");
   }
@@ -73,5 +83,5 @@ let humanScore = 0;
 let computerScore = 0;
 
 /* Call functions */
-const humanChoice = getUserChoice();
-const computerChoice = getComputerChoice();
+
+playGame();
