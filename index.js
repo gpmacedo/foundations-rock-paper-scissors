@@ -17,8 +17,8 @@ function getComputerChoice() {
 /* Prompt the user for their choice */
 
 function getUserChoice() {
-  let userChoice = prompt("Rock, paper, scissors? ", "Pick one").toLowerCase();
-  return userChoice;
+  let humanChoice = prompt("Rock, paper, scissors? ", "Pick one").toLowerCase();
+  return humanChoice;
 }
 
 /* Compare the two choices */
@@ -50,6 +50,6 @@ let computerScore = 0;
 
 /* Call functions */
 
-getUserChoice();
-getComputerChoice();
-isATie();
+const humanChoice = getUserChoice();
+const computerChoice = getComputerChoice();
+isATie(humanChoice, computerChoice);
