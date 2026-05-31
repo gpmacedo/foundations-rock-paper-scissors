@@ -21,7 +21,7 @@ function getUserChoice() {
   return humanChoice;
 }
 
-/* Compare the two choices */
+/* Check if it's a tie*/
 function isATie(humanChoice, computerChoice) {
   if (humanChoice === computerChoice) {
     console.log("It's a tie!");
@@ -30,6 +30,7 @@ function isATie(humanChoice, computerChoice) {
   }
 }
 
+/* Compare to decide the winner*/
 function compareChoices(humanChoice, computerChoice) {
   if (
     (humanChoice === "rock" && computerChoice === "scissors") ||
@@ -48,12 +49,29 @@ function compareChoices(humanChoice, computerChoice) {
   }
 }
 
+/* Logic for 5 rounds */
+function playGame() {
+  isATie(humanChoice, computerChoice);
+  console.log(`The score is: H ${humanScore} - C ${computerScore}`);
+  isATie(humanChoice, computerChoice);
+  console.log(`The score is: H ${humanScore} - C ${computerScore}`);
+  isATie(humanChoice, computerChoice);
+  console.log(`The score is: H ${humanScore} - C ${computerScore}`);
+  isATie(humanChoice, computerChoice);
+  console.log(`The score is: H ${humanScore} - C ${computerScore}`);
+  isATie(humanChoice, computerChoice);
+  console.log(`The final is: H ${humanScore} - C ${computerScore}`);
+  if (humanScore > computerScore) {
+    console.log("Congratulations! You Win.");
+  } else {
+    console.log("Too bad. You Lose.");
+  }
+}
+
 /* Keep score */
 let humanScore = 0;
 let computerScore = 0;
 
 /* Call functions */
-
 const humanChoice = getUserChoice();
 const computerChoice = getComputerChoice();
-isATie(humanChoice, computerChoice);
